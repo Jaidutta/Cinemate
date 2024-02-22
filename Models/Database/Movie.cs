@@ -13,11 +13,11 @@ namespace Cinemate.Models.Database
 
         public string? Title { get; set; } // for movie title
 
-        public string? Tagline { get; set; } // tagline of the movie as it come from the Api
+        public string? TagLine { get; set; } // tagline of the movie as it come from the Api
 
         public string? Overview { get; set; }
 
-        public string? Runtime { get; set; } // used to store runtime of the movie
+        public int RunTime { get; set; } // used to store runtime of the movie
 
 
         [DataType(DataType.Date)]
