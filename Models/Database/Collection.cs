@@ -1,6 +1,6 @@
 ﻿namespace Cinemate.Models.Database
 {
-    // We are using this to categorise your collection of movies into custom collections
+    // We are using this to categorise our collection of movies into custom collections
     public class Collection
     {
         public int Id { get; set; } // primary key of the collection table

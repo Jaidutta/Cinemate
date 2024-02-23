@@ -3,7 +3,7 @@
     // Many-to-Many Table for Movie and Collection
     // It's job is to hold a bunch of primary keys.
     // Each record in this table will have a movie primary key and collection primary key 
-    // Linking the 2 together
+    // Linking the 2 together   --> Many-to-Many Linking table of Movie and Collection
     public class MovieCollection
     {
         public int Id { get; set; } // primary key of this table
