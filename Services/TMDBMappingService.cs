@@ -48,7 +48,7 @@ namespace Cinemate.Services
             return actor;
         }
 
-        public async Task<Movie> MapMovieDetail(MovieDetail movie)
+        public async Task<Movie> MapMovieDetailAsync(MovieDetail movie)
         {
             Movie newMovie = null;
 

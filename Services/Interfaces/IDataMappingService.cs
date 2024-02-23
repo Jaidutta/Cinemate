@@ -9,7 +9,7 @@ namespace Cinemate.Services.Interfaces
      */
     public interface IDataMappingService
     {
-        Task<Movie> MapMovieDetail(MovieDetail movie);
+        Task<Movie> MapMovieDetailAsync(MovieDetail movie);
         ActorDetail MapActorDetail(ActorDetail actor);
     }
 }
