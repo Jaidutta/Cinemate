@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cinemate.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Initial_001 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,7 +52,7 @@ namespace Cinemate.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Collections",
+                name: "Collection",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -62,7 +62,7 @@ namespace Cinemate.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Collections", x => x.Id);
+                    table.PrimaryKey("PK_Collection", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -234,9 +234,9 @@ namespace Cinemate.Database.Migrations
                 {
                     table.PrimaryKey("PK_MovieCollection", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MovieCollection_Collections_CollectionId",
+                        name: "FK_MovieCollection_Collection_CollectionId",
                         column: x => x.CollectionId,
-                        principalTable: "Collections",
+                        principalTable: "Collection",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -363,7 +363,7 @@ namespace Cinemate.Database.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Collections");
+                name: "Collection");
 
             migrationBuilder.DropTable(
                 name: "Movie");

@@ -38,7 +38,7 @@ namespace Cinemate.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Collections");
+                    b.ToTable("Collection");
                 });
 
             modelBuilder.Entity("Cinemate.Models.Database.Movie", b =>

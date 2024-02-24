@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cinemate.Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240221221927_Initial")]
-    partial class Initial
+    [Migration("20240224004214_Initial_001")]
+    partial class Initial_001
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace Cinemate.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Collections");
+                    b.ToTable("Collection");
                 });
 
             modelBuilder.Entity("Cinemate.Models.Database.Movie", b =>

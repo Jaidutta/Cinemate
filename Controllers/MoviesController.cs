@@ -75,7 +75,7 @@ namespace Cinemate.Controllers
         // GET: Movie/Create
         public IActionResult Create()
         {                                            /* --> Data, once selection is made Id transmitted to the post, Data shown to user*/
-            ViewData["CollectionId"] = new SelectList(_context.Collections, "Id", "Name");
+            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Name");
             return View();
         }
 
@@ -168,10 +168,10 @@ namespace Cinemate.Controllers
             return View(movie);
         }
 
-        // GET: Movie/Delete/5
+        // GET: Collection/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Movie == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -186,15 +186,11 @@ namespace Cinemate.Controllers
             return View(movie);
         }
 
-        // POST: Temp/Delete/5
+        // POST: Collection/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Movie == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Movie'  is null.");
-            }
             var movie = await _context.Movie.FindAsync(id);
             if (movie != null)
             {
@@ -202,10 +198,10 @@ namespace Cinemate.Controllers
             }
 
             await _context.SaveChangesAsync();
-
-           
             return RedirectToAction("Library", "Movies");
         }
+
+
 
         private bool MovieExists(int id)
         {
@@ -245,7 +241,7 @@ namespace Cinemate.Controllers
         } 
         private async Task AddToMovieCollection(int movieId, string collectionName)
         {
-            var collection = _context.Collections.FirstOrDefaultAsync(c => c.Id == movieId);
+            var collection = _context.Collection.FirstOrDefaultAsync(c => c.Id == movieId);
 
             _context.Add(
                 new MovieCollection()

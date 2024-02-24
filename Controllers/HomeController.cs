@@ -30,7 +30,7 @@ namespace Cinemate.Controllers
 
             var data = new LandingPageVM()
             {
-                CustomCollections = await _context.Collections
+                CustomCollections = await _context.Collection
                                 .Include(c => c.MovieCollection)
                                 .ThenInclude(mc => mc.Movie)
                                 .ToListAsync(),
